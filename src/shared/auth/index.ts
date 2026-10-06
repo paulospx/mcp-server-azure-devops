@@ -8,9 +8,6 @@
  * - Azure CLI (AzureCliCredential)
  */
 
-export {
-  AuthenticationMethod,
-  AuthConfig,
-  createAuthClient,
-} from './auth-factory';
+export { AuthenticationMethod, createAuthClient } from './auth-factory';
+export type { AuthConfig } from './auth-factory';
 export { AzureDevOpsClient } from './client-factory';

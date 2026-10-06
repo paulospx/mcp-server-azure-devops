@@ -1,3 +1,4 @@
+import { getTextContent } from '@/shared/test/text-content';
 import { isWorkItemsRequest, handleWorkItemsRequest } from './';
 import { CallToolRequest } from '@modelcontextprotocol/sdk/types.js';
 import { WebApi } from 'azure-devops-node-api';
@@ -189,7 +190,7 @@ describe('Work Items Request Handlers', () => {
         workItemModule.GetWorkItemAttachmentSchema.parse,
       ).toHaveBeenCalledWith(args);
       expect(workItemModule.getWorkItemAttachment).toHaveBeenCalled();
-      expect(result.content[0].text).toContain('output.txt');
+      expect(getTextContent(result.content)).toContain('output.txt');
     });
 
     it('should handle delete_work_item_attachment requests', async () => {

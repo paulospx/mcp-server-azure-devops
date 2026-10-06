@@ -141,4 +141,4 @@ export interface GetPipelineLogOptions {
 
 export type PipelineLogContent = unknown;
 
-export { Pipeline, Run };
+export type { Pipeline, Run };
